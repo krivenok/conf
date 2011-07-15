@@ -1,0 +1,9 @@
+# Do not make noise
+set bell-style none
+
+# History searching.
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+
+# Removes the annoying "-- more --" prompt for long lists
+set page-completions off

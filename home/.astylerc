@@ -1,0 +1,11 @@
+mode=c
+indent=spaces=2
+indent-classes
+indent-switches
+indent-brackets
+indent-blocks
+indent-preprocessor
+brackets=break
+pad-oper
+keep-one-line-statements
+formatted
