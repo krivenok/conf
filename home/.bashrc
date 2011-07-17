@@ -3,14 +3,15 @@
 
 # *** Environment ***
 export EDITOR=vim
-export LANG=C
+export LANG=ru_RU.KOI8-R
 export LC_ALL=C
-export TERM=xterm
-export PATH=/usr/lib64/ccache/bin:/usr/lib64/ccache:/usr/lib/ccache/bin:/usr/local/git/current/bin:/usr/local/ctags/ctags/bin:/usr/local/svn144/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin
+export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin
 export PAGER="less -s"
-export REPO=http://c4svn.sspg.lab.emc.com/svn/repos/csx_top/csx2
+export TERM=xterm
+
 # *** Aliases ***
-alias gvim="gvim -geometry 145x43"
+alias gvim="LC_ALL=ru_RU.KOI8-R gvim -geometry 145x43"
+alias vim="LC_ALL=ru_RU.KOI8-R vim"
 alias psgrep="ps auxw | grep "
 alias grep='LANG=C grep --color=auto' 
 alias screen='TERM=vt100 screen'
