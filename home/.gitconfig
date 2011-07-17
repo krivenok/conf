@@ -1,0 +1,14 @@
+[user]
+	name = Dmitry V. Krivenok
+	email = krivenok.dmitry@gmail.com
+
+[alias]
+co = checkout
+ci = commit
+st = status
+br = branch
+
+[color]
+diff = auto
+status = auto
+branch = auto
