@@ -1,6 +1,3 @@
-# When an interactive shell that is not a login shell is started, bash reads and executes 
-# commands from /etc/bash.bashrc and ~/.bashrc
-
 # *** Environment ***
 export EDITOR=vim
 export LANG=ru_RU.KOI8-R
