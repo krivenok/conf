@@ -1,0 +1,4 @@
+" Use man plug-in
+runtime ftplugin/man.vim
+" Use perldoc plug-in
+runtime ftplugin/perl_doc.vim

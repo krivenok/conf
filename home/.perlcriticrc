@@ -1,0 +1,5 @@
+severity  = brutal
+verbose   = 5
+exclude   = Miscellanea::RequireRcsKeywords  Subroutines::ProhibitSubroutinePrototypes InputOutput::RequireCheckedSyscalls InputOutput::ProhibitBacktickOperators ErrorHandling::RequireCheckingReturnValueOfEval InputOutput::RequireBriefOpen Variables::RequireLocalizedPunctuationVars
+color     = 1
+#pager     = less

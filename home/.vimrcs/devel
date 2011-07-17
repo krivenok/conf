@@ -1,0 +1,100 @@
+" Detect file types.
+filetype on
+
+" Show matched brackets.
+set showmatch
+
+" Automatically source
+autocmd BufWritePost   ~/.vimrc  :source %
+autocmd BufWritePost   ~/.vimrcs/* :source %
+
+" It's required for auto-completion words like 'first_second'.
+set iskeyword+=_
+set iskeyword-=:
+set iskeyword-=.
+au BufRead,BufNewFile * setl iskeyword+=_
+
+" TagList Plugin settings.
+let Tlist_Process_File_Always = 1
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" Highlight hash keys.
+let perl_extended_vars = 1
+
+" Svndiff settings.
+noremap <F2> :call Svndiff("prev")<CR> 
+noremap <F3> :call Svndiff("next")<CR>
+noremap <F4> :call Svndiff("clear")<CR>
+
+" Functions separator.
+au FileType c,c++ imap <F5> ////////////////////////////////////////////////////////////////////////////////
+au FileType perl imap <F5> ################################################################################
+
+" Multirow comments
+au FileType perl vmap <F6> :s/^/#/ <Enter> :noh<CR>
+au FileType perl vmap <F7> :s/^#// <Enter> :noh<CR>
+au FileType c,c++ vmap <F6> :s/^/\/\// <Enter> :noh<CR>
+au FileType c,c++ vmap <F7> :s/^\/\/// <Enter> :noh<CR>
+
+" Disabling 'next line comments'
+" See :help formatoptions for details
+set fo-=ro
+
+" Width of the shift
+set shiftwidth=2
+
+" Run build command (usually make).
+au FileType c,c++ map <F9> :w<Enter> :!make<Enter>
+
+" Mapping for source code beautifier
+au FileType perl map <F11> :ma p<Enter> :%!perltidy<Enter>:w<Enter> :normal `p<Enter>
+au FileType c,c++ map <F11> :%!astyle<Enter>:w<Enter>
+
+" Source code checker
+au FileType perl map <F12> :!perlcritic % ; perl -wc %<Enter>
+
+" Highlighting options 
+set hlsearch
+highlight Normal guibg=lightyellow
+highlight Cursor guibg=Black guifg=NONE
+highlight NonText guibg=grey80
+highlight Constant gui=NONE guibg=grey95
+highlight Special gui=NONE guibg=grey95
+
+" Syntax highlighting.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+" Highlight strings and numbers inside a comment.
+let c_comment_strings = 1
+
+" Always set autoindenting on
+"set ai	
+
+" Search tags file in top-level directories moving to root directory.
+set tags=./tags;/ 
+
+" Open definition in new tab.
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+"if has("cscope")
+"    set csprg=/usr/bin/cscope
+"    set nocsverb
+"    " add any database in current directory
+"    if filereadable("cscope.out")
+"        cs add cscope.out
+"        " else add database pointed to by environment
+"    elseif $CSCOPE_DB != ""
+"        cs add $CSCOPE_DB
+"    endif
+"    set csto=1
+"    set nocst
+"endif
+"
+"map <C-[> :cs find c <cword><CR>
+
+"au BufRead,BufNewFile *.pm set filetype=perl || set commentstring=#%s
+"au FileType perl set foldmethod=syntax
+"au FileType perl let perl_fold = 1 
+"au FileType perl let perl_fold_blocks = 1

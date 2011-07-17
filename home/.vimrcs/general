@@ -1,0 +1,62 @@
+" Use Vim defaults (much better!)
+set nocompatible	
+
+" Allows backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+
+" Read/write a .viminfo file, don't store more than 50 lines of registers
+set viminfo='20,\"50
+
+" Keep 50 lines of command line history
+set history=50		
+
+" Show the cursor position all the time
+set ruler		
+
+" Show line numbers.
+set number
+
+" Highlight line under the cursor.
+"set cursorline
+
+" Status line format.
+set statusline=%n%m\ %f\ %l/%L,%c-%v\ [\%03.3b/\%02.2B]
+
+" Last window will _always_ have a status line.
+set laststatus=2
+
+" 256 colors in vim
+set t_Co=256
+
+" Quick split windows navigation
+map <C-down> <C-w>w
+map<C-up> <C-w>W
+
+" Windows-like copy/paste.
+vnoremap <C-C> "+y
+map <C-V> "+gP
+
+" Error format
+set errorformat=%f:%l:%m
+
+" Disabled for security reasons
+set modelines=0
+
+if has("autocmd")
+  " In text files, always limit the width of text to 78 characters.
+  autocmd BufRead *.txt set tw=78
+  " When editing a file, always jump to the last cursor position.
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal g'\"" |
+  \ endif
+endif
+
+" Directory containing doc tags.
+:helptags ~/.vim/doc
+
+" Remap search commands to support Perl regexes via eregex plugin.
+nnoremap / :M/
+nnoremap ,/ /
+

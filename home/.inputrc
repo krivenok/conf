@@ -7,3 +7,6 @@ set bell-style none
 
 # Removes the annoying "-- more --" prompt for long lists
 set page-completions off
+
+"\C-f": forward-word
+"\C-b": backward-word

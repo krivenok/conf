@@ -1,0 +1,2 @@
+genhtml_med_limit = 15
+genhtml_hi_limit = 50

@@ -1,0 +1,19 @@
+" To be able to paste into another X applications.
+" See the explanation here:
+" http://groups.google.com/group/comp.editors/browse_thread/thread/d4388400e49e95c1/d541cf07cd84dd9f?lnk=st&q=gvim+X+clipboard&rnum=3&hl=en#d541cf07cd84dd9f
+set guioptions+=A
+
+if has("gui_running") 
+  if has("gui_gtk2") 
+      set guifont=Courier\ New\ 12
+  elseif has("x11") 
+      set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-* 
+  else 
+      set guifont=Courier_New:h11:cDEFAULT 
+  endif 
+endif
+
+if has("gui_running")
+  map <C-Space> <C-@>
+endif  
+

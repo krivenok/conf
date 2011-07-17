@@ -1,0 +1,6 @@
+" Hide tabs panel
+set showtabline=2
+
+" Quick tab navigation
+map <C-left> :tabp<CR> 
+map<C-right> :tabn<CR>
