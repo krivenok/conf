@@ -60,3 +60,7 @@ pacs() {
 		/^[^[:space:]]/	s,.*,${CL}0;36m&${RS},
 	")"
 }
+
+function calc {
+    awk "BEGIN{ print $* }";
+}
