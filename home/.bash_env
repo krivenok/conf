@@ -13,6 +13,8 @@ export LC_ALL=C
 ################################################################################
 ###                              Bash history                                ###
 ################################################################################
+# Store a timestamp in the history
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 # Keep 1000 lines in .bash_history (default is 500)
 export HISTSIZE=1000
 export HISTFILESIZE=1000
