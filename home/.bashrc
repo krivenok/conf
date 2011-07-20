@@ -1,8 +1,3 @@
-# Load aliases
-if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
-fi
-
 # *** Environment ***
 export EDITOR=vim
 export LANG=ru_RU.KOI8-R
@@ -10,14 +5,12 @@ export LC_ALL=C
 export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin
 export PAGER="less -s"
 export TERM=xterm
-
 # Keep 1000 lines in .bash_history (default is 500)
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 export CCACHE_DIR=/tmp/CCACHE
 # Ignore duplicate lines.
 export HISTCONTROL=ignoredups
-
 export HISTFILE=~/.bash_history-`hostname`
 
 # Forces bash to append to history rather than overwrite
@@ -38,29 +31,12 @@ export PROMPT_COMMAND="
 # here http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 PS1='\[\033[01;34m\]\u@\h \t\[\033[01;34m\] \w \$$_RES_STR\[\033[00m\] '
 
-doit ()
-{ 
-  CMD=$@
-  STATUS=1
-  while [ $STATUS != 0 ]
-  do
-    $CMD
-    STATUS=$?
-  done
-}
+# Load aliases
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
-pacs() {
-	local CL='\\e['
-	local RS='\\e[0;0m'
-
-	echo -e "$(pacman -Ss "$@" | sed "
-		/^core/		s,.*,${CL}1;31m&${RS},
-		/^extra/	s,.*,${CL}0;32m&${RS},
-		/^community/	s,.*,${CL}1;35m&${RS},
-		/^[^[:space:]]/	s,.*,${CL}0;36m&${RS},
-	")"
-}
-
-function calc {
-    awk "BEGIN{ print $* }";
-}
+# Load functions
+if [ -f ~/.bash_functions ]; then
+. ~/.bash_functions
+fi
