@@ -1,0 +1,28 @@
+export EDITOR=vim
+export LANG=ru_RU.KOI8-R
+export LC_ALL=C
+export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin
+export PAGER="less -s"
+export TERM=xterm
+# Keep 1000 lines in .bash_history (default is 500)
+export HISTSIZE=1000
+export HISTFILESIZE=1000
+# Ignore duplicate lines.
+export HISTCONTROL=ignoredups
+export HISTFILE=~/.bash_history-`hostname`
+
+# Forces bash to append to history rather than overwrite
+shopt -s histappend 
+
+# Show status of last command or pipeline. 
+# Also write to history whenever the prompt is displayed
+export PROMPT_COMMAND="
+       _RES=\${PIPESTATUS[*]};
+       _RES_STR='';
+       for res in \$_RES; do
+           _RES_STR=\" [\$_RES]\";
+       done ; history -a"
+
+# Information about escape characters and colors may be found
+# here http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+export PS1='\[\033[01;34m\]\u@\h \t\[\033[01;34m\] \w \$$_RES_STR\[\033[00m\] '
