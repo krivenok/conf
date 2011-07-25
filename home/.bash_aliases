@@ -9,9 +9,9 @@ alias hd='od -Ax -tx1z -v'
 ################################################################################
 ###                                 Search                                   ###
 ################################################################################
-alias grep='LANG=C grep --color=auto' 
-alias g="egrep --exclude=\*.svn\* -r -n "
-alias psgrep="ps auxw | grep "
+alias grep='LANG=C egrep --color=auto' 
+alias g="LANG=C egrep --color=auto --exclude=\*.svn\* -r -n "
+alias psgrep="ps auxw | egrep "
 ################################################################################
 ###                         File system listings                             ###
 ################################################################################
