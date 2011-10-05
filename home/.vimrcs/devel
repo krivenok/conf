@@ -26,6 +26,9 @@ noremap <F2> :call Svndiff("prev")<CR>
 noremap <F3> :call Svndiff("next")<CR>
 noremap <F4> :call Svndiff("clear")<CR>
 
+" SVN blame
+vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
 " Functions separator.
 au FileType c,c++ imap <F5> ////////////////////////////////////////////////////////////////////////////////
 au FileType perl imap <F5> ################################################################################
