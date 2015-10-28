@@ -1,17 +1,14 @@
 ################################################################################
 ###                                Generic                                   ###
 ################################################################################
-alias gvim="LC_ALL=ru_RU.KOI8-R gvim -geometry 145x43"
-alias vim="LC_ALL=ru_RU.KOI8-R vim"
-alias screen='TERM=vt100 screen'
+alias gvim="gvim -geometry 145x43"
 # What most people want from od (hexdump)
 alias hd='od -Ax -tx1z -v'
 ################################################################################
 ###                                 Search                                   ###
 ################################################################################
-alias grep='LANG=C egrep --color=auto' 
-alias g="LANG=C egrep --color=auto --exclude=\*.svn\* -r -n "
-alias psgrep="ps auxw | egrep "
+alias grep='LANG=C grep -P --color=auto'
+alias psgrep="ps auxw | grep -P "
 ################################################################################
 ###                         File system listings                             ###
 ################################################################################
@@ -22,10 +19,14 @@ alias lll="ls -lrth | tail"
 # Just list directories
 alias lld='ls -lUd */'
 ################################################################################
-###                                 Diff tools                               ###
+###                                     SSH                                  ###
 ################################################################################
-alias csdiff='svn diff --diff-cmd diff -x "-uN"'
-alias svndiff="svn diff -r PREV:COMMITTED"
+alias vssh='ssh -i /c4shares/Public/ssh/id_rsa.root -l root'
+alias vscp='scp -i /c4shares/Public/ssh/id_rsa.root'
+################################################################################
+###                            AccuRev                                       ###
+################################################################################
+alias fast_build_all='CFG_NO_SETUPWSPACE=1 CFG_NO_CMVERSION=1 /c4shares/auto/devutils/bin/build_all -t GNOSIS -f DEBUG'
 ################################################################################
 ###                                                                          ###
 ################################################################################
