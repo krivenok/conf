@@ -1,4 +1,5 @@
---backup-and-modify-in-place
+# Call with -b instead in Vim to make perlcritic happy.
+#--backup-and-modify-in-place
 
 #--maximum-line-length=80
 --maximum-line-length=160
