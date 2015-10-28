@@ -3,21 +3,18 @@
 ################################################################################
 export EDITOR=vim
 export PAGER="less -s"
-export TERM=xterm
-export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin
-################################################################################
-###                                 Locale                                   ###
-################################################################################
-export LANG=ru_RU.KOI8-R
-export LC_ALL=C
+export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin:/opt/accurev/bin/:opt/CmTools/shbin
 ################################################################################
 ###                              Bash history                                ###
 ################################################################################
+# Using separate history file on each host sharing the same home directory via NFS.
+export HISTFILE=~/.bash_history-`hostname`
 # Store a timestamp in the history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 # Keep 1000 lines in .bash_history (default is 500)
 export HISTSIZE=1000
 export HISTFILESIZE=1000
+export CCACHE_DIR=/var/tmp/CCACHE
 # Ignore duplicate lines.
 export HISTCONTROL=ignoredups
 # Forces bash to append to history rather than overwrite
@@ -37,6 +34,12 @@ export PROMPT_COMMAND="
 # Information about escape characters and colors may be found
 # here http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 export PS1='\[\033[01;34m\]\u@\h \t\[\033[01;34m\] \w \$$_RES_STR\[\033[00m\] '
+################################################################################
+###                     Work-specific environment                            ###
+################################################################################
+export AC_DIFF_CLI=git
+export ACCUREV_DIFF_FLAGS="--no-pager diff -U %1 %2"
+
 ################################################################################
 ###                                                                          ###
 ################################################################################
