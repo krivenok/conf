@@ -60,3 +60,4 @@ endif
 nnoremap / :M/
 nnoremap ,/ /
 
+set nobackup

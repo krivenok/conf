@@ -50,7 +50,7 @@ set shiftwidth=2
 au FileType c,c++ map <F9> :w<Enter> :!make<Enter>
 
 " Mapping for source code beautifier
-au FileType perl map <F11> :ma p<Enter> :%!perltidy<Enter>:w<Enter> :normal `p<Enter>
+au FileType perl map <F11> :ma p<Enter> :%!perltidy -b<Enter>:w<Enter> :normal `p<Enter>
 au FileType c,c++ map <F11> :%!astyle<Enter>:w<Enter>
 
 " Source code checker
@@ -76,7 +76,7 @@ let c_comment_strings = 1
 "set ai	
 
 " Search tags file in top-level directories moving to root directory.
-set tags=./tags;/ 
+set tags=tags,/ 
 
 " Open definition in new tab.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -101,3 +101,8 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "au FileType perl set foldmethod=syntax
 "au FileType perl let perl_fold = 1 
 "au FileType perl let perl_fold_blocks = 1
+
+if exists('$WINDOWID')
+else
+  set background=dark
+endif

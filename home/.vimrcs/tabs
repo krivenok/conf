@@ -2,5 +2,21 @@
 set showtabline=2
 
 " Quick tab navigation
-map <C-left> :tabp<CR> 
-map<C-right> :tabn<CR>
+if has("gui_running") || (&term == "win32") || (&term == "pcterm") || (&term == "xterm")
+  map <C-left> : tabprev<CR>
+  map <C-right> : tabnext<CR>
+elseif &term == "putty" 
+  map <Esc>OD :tabprev<CR>
+  map <Esc>OC :tabnext<CR> 
+elseif &term =~ '^screen' && exists('$TMUX') && exists('$WINDOWID')
+"""  map <C-left> : tabprev<CR>
+""  map <C-right> : tabnext<CR>
+  map <Esc>[D :tabprev<CR>
+  map <Esc>[C :tabnext<CR>
+elseif &term =~ '^screen' && exists('$TMUX')
+  map <Esc>OD :tabprev<CR>
+  map <Esc>OC :tabnext<CR> 
+else
+  map <Esc>[D :tabprev<CR>
+  map <Esc>[C :tabnext<CR>
+endif 
