@@ -1,6 +1,6 @@
 [user]
-	name = Dmitry V. Krivenok
-	email = krivenok.dmitry@gmail.com
+name = Dmitry V. Krivenok
+email = krivenok.dmitry@gmail.com
 
 [alias]
 co = checkout
