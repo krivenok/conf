@@ -12,3 +12,9 @@ br = branch
 diff = auto
 status = auto
 branch = auto
+
+[sendemail]
+smtpEncryption = tls
+smtpServer = smtp.gmail.com
+smtpUser = krivenok.dmitry@gmail.com
+smtpServerPort = 587
