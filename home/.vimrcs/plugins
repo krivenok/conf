@@ -2,3 +2,7 @@
 runtime ftplugin/man.vim
 " Use perldoc plug-in
 runtime ftplugin/perl_doc.vim
+
+call plug#begin('~/.vim/plugged')
+Plug 'fatih/vim-go'
+call plug#end()
