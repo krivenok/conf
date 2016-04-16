@@ -5,7 +5,7 @@ set guioptions+=A
 
 if has("gui_running") 
   if has("gui_gtk2") 
-      set guifont=Courier\ New\ 12
+      set guifont=Courier\ New\ 16
   elseif has("x11") 
       set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-* 
   else 
