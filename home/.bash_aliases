@@ -21,7 +21,7 @@ alias lld='ls -lUd */'
 ################################################################################
 ###                                     SSH                                  ###
 ################################################################################
-alias vssh='ssh -i /c4shares/Public/ssh/id_rsa.root -l root'
+alias vssh='TERM=linux ssh -i /c4shares/Public/ssh/id_rsa.root -l root'
 alias vscp='scp -i /c4shares/Public/ssh/id_rsa.root'
 ################################################################################
 ###                            AccuRev                                       ###
