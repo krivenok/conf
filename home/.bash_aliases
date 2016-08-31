@@ -12,6 +12,8 @@ alias psgrep="ps auxw | grep -P "
 ################################################################################
 ###                         File system listings                             ###
 ################################################################################
+# Color ls
+alias ls="ls --color=auto"
 # Quick dir listing, latest files/dirs at the bottom
 alias ll="ls -lrth"
 # The same but show only few the most recently changed files.
