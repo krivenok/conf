@@ -7,8 +7,6 @@ export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin:/opt/accurev/bin/:opt/CmTools/s
 ################################################################################
 ###                              Bash history                                ###
 ################################################################################
-# Using separate history file on each host sharing the same home directory via NFS.
-#export HISTFILE=~/.bash_history-`hostname`
 # Store a timestamp in the history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 # Keep 1000 lines in .bash_history (default is 500)
