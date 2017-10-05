@@ -53,9 +53,12 @@ let c_comment_strings = 1
 " Search tags file in top-level directories moving to root directory.
 set tags=tags,/ 
 
-if exists('$WINDOWID')
-else
+if ! exists('$WINDOWID')
   set background=dark
+endif
+
+if g:os == "Darwin"
+  set background=light
 endif
 
 " Scope mappings
