@@ -18,3 +18,9 @@ else
   map <Esc>[D :tabprev<CR>
   map <Esc>[C :tabnext<CR>
 endif 
+
+" On MacOS use Fn-Left and Fn-Right
+if g:os == "Darwin"
+  map <Esc>[1~ :tabprev<CR>
+  map <Esc>[4~ :tabnext<CR>
+endif
