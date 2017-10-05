@@ -17,4 +17,4 @@ if has("gui_running")
   map <C-Space> <C-@>
 endif  
 
-cmap <S-Insert>  <C-R>+
+cmap <S-Insert> <C-R>+
