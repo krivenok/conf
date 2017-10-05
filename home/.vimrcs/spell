@@ -1,7 +1,4 @@
 " Spelling options 
 set nospell
 set spelllang=en
-
-"highlight clear SpellBad
-"highlight SpellBad term=standout ctermbg=14
 highlight SpellBad term=standout ctermbg=9
