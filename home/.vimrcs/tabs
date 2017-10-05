@@ -19,8 +19,13 @@ else
   map <Esc>[C :tabnext<CR>
 endif 
 
-" On MacOS use Fn-Left and Fn-Right
+" On MacOS use Shift-Left and Shift-Right
 if g:os == "Darwin"
-  map <Esc>[1~ :tabprev<CR>
-  map <Esc>[4~ :tabnext<CR>
+  if has("gui_running")
+    map <S-left> : tabprev<CR>
+    map <S-right> : tabnext<CR>
+  else
+    map <Esc>[1;2D :tabprev<CR>
+    map <Esc>[1;2C :tabnext<CR>
+  endif
 endif
