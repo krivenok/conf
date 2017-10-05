@@ -78,9 +78,6 @@ let c_comment_strings = 1
 " Search tags file in top-level directories moving to root directory.
 set tags=tags,/ 
 
-" Open definition in new tab.
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
 "if has("cscope")
 "    set csprg=/usr/bin/cscope
 "    set nocsverb
@@ -106,3 +103,13 @@ if exists('$WINDOWID')
 else
   set background=dark
 endif
+
+" Scope mappings
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
