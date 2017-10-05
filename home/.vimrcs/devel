@@ -14,30 +14,8 @@ set iskeyword-=:
 set iskeyword-=.
 au BufRead,BufNewFile * setl iskeyword+=_
 
-" TagList Plugin settings.
-let Tlist_Process_File_Always = 1
-nnoremap <silent> <F8> :TlistToggle<CR>
-
 " Highlight hash keys.
 let perl_extended_vars = 1
-
-" Svndiff settings.
-noremap <F2> :call Svndiff("prev")<CR> 
-noremap <F3> :call Svndiff("next")<CR>
-noremap <F4> :call Svndiff("clear")<CR>
-
-" SVN blame
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-
-" Functions separator.
-au FileType c,c++ imap <F5> ////////////////////////////////////////////////////////////////////////////////
-au FileType perl imap <F5> ################################################################################
-
-" Multirow comments
-au FileType perl vmap <F6> :s/^/#/ <Enter> :noh<CR>
-au FileType perl vmap <F7> :s/^#// <Enter> :noh<CR>
-au FileType c,c++ vmap <F6> :s/^/\/\// <Enter> :noh<CR>
-au FileType c,c++ vmap <F7> :s/^\/\/// <Enter> :noh<CR>
 
 " Disabling 'next line comments'
 " See :help formatoptions for details
@@ -72,35 +50,8 @@ endif
 " Highlight strings and numbers inside a comment.
 let c_comment_strings = 1
 
-" Always set autoindenting on
-"set ai	
-
 " Search tags file in top-level directories moving to root directory.
 set tags=tags,/ 
-
-" Open definition in new tab.
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
-"if has("cscope")
-"    set csprg=/usr/bin/cscope
-"    set nocsverb
-"    " add any database in current directory
-"    if filereadable("cscope.out")
-"        cs add cscope.out
-"        " else add database pointed to by environment
-"    elseif $CSCOPE_DB != ""
-"        cs add $CSCOPE_DB
-"    endif
-"    set csto=1
-"    set nocst
-"endif
-"
-"map <C-[> :cs find c <cword><CR>
-
-"au BufRead,BufNewFile *.pm set filetype=perl || set commentstring=#%s
-"au FileType perl set foldmethod=syntax
-"au FileType perl let perl_fold = 1 
-"au FileType perl let perl_fold_blocks = 1
 
 if exists('$WINDOWID')
 else
