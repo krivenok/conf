@@ -3,12 +3,10 @@
 ################################################################################
 export EDITOR=vim
 export PAGER="less -s"
-export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin:/opt/accurev/bin/:opt/CmTools/shbin
+export PATH=/usr/local/bin:$PATH:/sbin:/usr/sbin
 ################################################################################
 ###                              Bash history                                ###
 ################################################################################
-# Using separate history file on each host sharing the same home directory via NFS.
-export HISTFILE=~/.bash_history-`hostname`
 # Store a timestamp in the history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 # Keep 1000 lines in .bash_history (default is 500)
@@ -35,11 +33,7 @@ export PROMPT_COMMAND="
 # here http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 export PS1='\[\033[01;34m\]\u@\h \t\[\033[01;34m\] \w \$$_RES_STR\[\033[00m\] '
 ################################################################################
-###                     Work-specific environment                            ###
+###                              Golang env                                  ###
 ################################################################################
-export AC_DIFF_CLI=git
-export ACCUREV_DIFF_FLAGS="--no-pager diff -U %1 %2"
-
-################################################################################
-###                                                                          ###
-################################################################################
+export GOPATH=${HOME}/GOPATH
+export PATH=$PATH:$GOPATH/bin

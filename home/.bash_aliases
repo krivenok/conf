@@ -7,13 +7,13 @@ alias hd='od -Ax -tx1z -v'
 ################################################################################
 ###                                 Search                                   ###
 ################################################################################
-alias grep='LANG=C grep -P --color=auto'
+alias grep='LANG=C grep'
 alias psgrep="ps auxw | grep -P "
 ################################################################################
 ###                         File system listings                             ###
 ################################################################################
 # Color ls
-alias ls="ls --color=auto"
+alias ls="ls"
 # Quick dir listing, latest files/dirs at the bottom
 alias ll="ls -lrth"
 # The same but show only few the most recently changed files.

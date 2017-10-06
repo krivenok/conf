@@ -9,8 +9,6 @@ elseif &term == "putty"
   map <Esc>OD :tabprev<CR>
   map <Esc>OC :tabnext<CR> 
 elseif &term =~ '^screen' && exists('$TMUX') && exists('$WINDOWID')
-"""  map <C-left> : tabprev<CR>
-""  map <C-right> : tabnext<CR>
   map <Esc>[D :tabprev<CR>
   map <Esc>[C :tabnext<CR>
 elseif &term =~ '^screen' && exists('$TMUX')
@@ -20,3 +18,14 @@ else
   map <Esc>[D :tabprev<CR>
   map <Esc>[C :tabnext<CR>
 endif 
+
+" On MacOS use Shift-Left and Shift-Right
+if g:os == "Darwin"
+  if has("gui_running")
+    map <S-left> : tabprev<CR>
+    map <S-right> : tabnext<CR>
+  else
+    map <Esc>[1;2D :tabprev<CR>
+    map <Esc>[1;2C :tabnext<CR>
+  endif
+endif
