@@ -53,13 +53,7 @@ let c_comment_strings = 1
 " Search tags file in top-level directories moving to root directory.
 set tags=tags,/ 
 
-if ! exists('$WINDOWID')
-  set background=dark
-endif
-
-if g:os == "Darwin"
-  set background=light
-endif
+set background=light
 
 " Scope mappings
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
