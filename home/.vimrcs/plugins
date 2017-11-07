@@ -5,4 +5,5 @@ runtime ftplugin/perl_doc.vim
 
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go'
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
