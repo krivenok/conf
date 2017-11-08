@@ -2,21 +2,15 @@
 set showtabline=2
 
 " Quick tab navigation
-if has("gui_running") || (&term == "win32") || (&term == "pcterm") || (&term == "xterm")
-  map <C-left> : tabprev<CR>
-  map <C-right> : tabnext<CR>
+if has("gui_running") || (&term == "win32") || (&term == "pcterm") || (&term =~ "^xterm")
+  map <S-left> : tabprev<CR>
+  map <S-right> : tabnext<CR>
 elseif &term == "putty" 
   map <Esc>OD :tabprev<CR>
   map <Esc>OC :tabnext<CR> 
-elseif &term =~ '^screen' && exists('$TMUX') && exists('$WINDOWID')
-  map <Esc>[D :tabprev<CR>
-  map <Esc>[C :tabnext<CR>
 elseif &term =~ '^screen' && exists('$TMUX')
-  map <Esc>OD :tabprev<CR>
-  map <Esc>OC :tabnext<CR> 
-else
-  map <Esc>[D :tabprev<CR>
-  map <Esc>[C :tabnext<CR>
+  map <Esc>[1;2D :tabprev<CR>
+  map <Esc>[1;2C :tabnext<CR>
 endif 
 
 " On MacOS use Shift-Left and Shift-Right
