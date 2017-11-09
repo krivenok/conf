@@ -8,7 +8,7 @@ if has("gui_running") || (&term == "win32") || (&term == "pcterm") || (&term =~ 
 elseif &term == "putty" 
   map <Esc>OD :tabprev<CR>
   map <Esc>OC :tabnext<CR> 
-elseif &term =~ '^screen' && exists('$TMUX')
+elseif &term =~ '^screen'
   map <Esc>[1;2D :tabprev<CR>
   map <Esc>[1;2C :tabnext<CR>
 endif 
