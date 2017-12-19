@@ -17,3 +17,8 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# Load bash configuration
+if [ -f ~/.bash_conf ]; then
+. ~/.bash_conf
+fi
