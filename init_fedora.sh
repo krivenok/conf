@@ -11,8 +11,8 @@ yum install -y git tig vim make gcc ctags cscope \
 	       iperf bison flex clang-libs clang-devel llvm-static ncurses-devel \
 	       libcap-devel libidn2-devel nettle-devel \
 	       perltidy perl-Perl-Critic.noarch git-email diffstat \
-	       pandoc lynx \
+	       pandoc lynx docker \
 	       xterm 'dnf-command(system-upgrade)' \
-	       http://mirror.team-cymru.org/rpmforge/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm
+	       http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm
 
-sudo pip install pyroute2
+pip install pyroute2
