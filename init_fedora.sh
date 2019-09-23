@@ -20,6 +20,7 @@ dnf install -y git tig vim make gcc ctags cscope \
 	       perltidy perl-Perl-Critic.noarch git-email diffstat \
 	       pandoc lynx docker golang code nvme-cli nvmetcli rdma-core libibverbs-utils ibutils \
 	       libnl3-devel trace-cmd iptraf-ng bcc bpftool libmnl-devel \
+	       glibc-devel.i686 iproute-devel \
 	       xterm 'dnf-command(system-upgrade)' \
 	       http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm
 
