@@ -22,7 +22,7 @@ sudo dnf install -y git tig vim make gcc ctags cscope \
 	       libnl3-devel trace-cmd iptraf-ng bcc bpftool libmnl-devel \
 	       glibc-devel.i686 iproute-devel \
 	       xterm 'dnf-command(system-upgrade)' \
-	       kubernetes etcd tcpreplay \
+	       kubernetes etcd tcpreplay iputils librdmacm-utils \
 	       http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm
 
 sudo pip install pyroute2
