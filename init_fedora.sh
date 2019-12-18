@@ -21,4 +21,4 @@ sudo dnf install -y git tig vim make gcc ctags cscope \
 	       xterm 'dnf-command(system-upgrade)' \
 	       kubernetes etcd tcpreplay iputils librdmacm-utils \
 	       http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm \
-	       qperf perftest man-db man-pages
+	       qperf perftest man-db man-pages sysstat
