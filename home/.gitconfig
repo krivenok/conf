@@ -18,3 +18,6 @@ smtpEncryption = tls
 smtpServer = smtp.gmail.com
 smtpUser = krivenok.dmitry@gmail.com
 smtpServerPort = 587
+
+[hub]
+host = eos2git.cec.lab.emc.com
