@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# For golang
-sudo rpm --import https://mirror.go-repo.io/fedora/RPM-GPG-KEY-GO-REPO
-curl -s https://mirror.go-repo.io/fedora/go-repo.repo | sudo tee /etc/yum.repos.d/go-repo.repo
-
 sudo dnf update -y && \
 sudo dnf autoremove -y && \
 sudo dnf install -y git tig vim make gcc ctags cscope \
@@ -20,5 +16,4 @@ sudo dnf install -y git tig vim make gcc ctags cscope \
 	       glibc-devel.i686 iproute-devel \
 	       xterm 'dnf-command(system-upgrade)' \
 	       kubernetes etcd tcpreplay iputils librdmacm-utils \
-	       http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/netperf-2.6.0-1.el6.rf.x86_64.rpm \
 	       qperf perftest man-db man-pages sysstat ethtool telnet
